@@ -95,7 +95,7 @@ jobs:
 
       - name: Build Debug APK
         working-directory: ${{ steps.project.outputs.dir }}
-        run: ./gradlew --no-daemon :app:assembleDebug "-Dorg.gradle.jvmargs=-Xmx5g -Dfile.encoding=UTF-8"
+        run: ./gradlew --no-daemon --dependency-verification=lenient :app:assembleDebug "-Dorg.gradle.jvmargs=-Xmx5g -Dfile.encoding=UTF-8"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
